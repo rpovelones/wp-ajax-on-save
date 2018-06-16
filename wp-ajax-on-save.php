@@ -19,7 +19,7 @@ function admin_assets( $hook ) {
     ];
 
     // admin javascript
-    wp_enqueue_script( 'my-theme/admin', get_template_directory_uri() . 'scripts/main.js', ['jquery'], '', true );
+    wp_enqueue_script( 'my-theme/admin', get_template_directory_uri() . '/js/main.js', ['jquery'], '', true );
 
     // some handy variables to use in our javascript
     wp_localize_script('my-theme/admin', 'utilityVars', $utility_vars);
@@ -42,7 +42,11 @@ function async_pdf_gen() {
     // do some stuff here.
     // maybe query the database for a list of posts...
 
-    echo 'Success message from server!'
+    // REMOVE! only for demo purposes
+    sleep(3);
+
+    // echo the success message
+    echo 'Success message from server!';
 
   } else {
 

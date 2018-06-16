@@ -54,8 +54,10 @@ function save_post_listener() {
   // use the WP "updated" message to determine if we just saved this post
   if (parseInt(utilityVars.params.message) === 1 && $('#message').hasClass('updated')) {
 
+    var waitMessage = 'Doing ajax request! Please wait. Do not refresh your browser until this is done.';
+
     // inital PDF generating notice
-    $('#message').after('<div id="ajax-pdf-notice" class="notice notice-warning is-dismissible"><span class="spinner" style="visibility:visible;float:left;margin:8px 5px 0 0;"></span><p>Printable PDF is generating. Do not refresh the page until this is complete.</p></div>');
+    $('#message').after('<div id="ajax-pdf-notice" class="notice notice-warning is-dismissible"><span class="spinner" style="visibility:visible;float:left;margin:8px 5px 0 0;"></span><p>'+ waitMessage +'</p></div>');
 
     // ajax call
     makeAjaxCall();
